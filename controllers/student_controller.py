@@ -19,7 +19,7 @@ class studentController:
        
        if not mobile:
            raise ValueError(ErrorMessages.INVALID_MOBILE_FIELD)
-       if not mobile .isdigit():
+       if not mobile.isdigit():
             raise ValueError(ErrorMessages.MOBILE_NOT_INTIGER)
        if len(mobile) != 11:
             raise ValueError(ErrorMessages.INVALID_MOBILE)

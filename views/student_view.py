@@ -8,6 +8,8 @@ class studentView(ttk.Frame):
         self.pack(fill="both", expand=True)
         self.create_widgets()
 
+        ttk.Label(self, text="فرم ثبت‌نام دانش‌آموز", font=("IRANSans", 14, "bold")).pack(pady=10)
+
     def create_widgets(self):
         self.name_entry = ttk.Entry(self)
         self.name_entry.pack(pady=5)
