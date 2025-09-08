@@ -1,6 +1,6 @@
 from messages.errors import ErrorMessages
 
-class studentController:
+class StudentController:
     def __init__(self, model):
         self.model = model
 
