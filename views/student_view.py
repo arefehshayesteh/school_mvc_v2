@@ -15,15 +15,19 @@ class studentView(ttk.Frame):
         self.code_entry = ttk.Entry(self)
         self.code_entry.pack(pady=5)
 
+        self.mobile_entry = ttk.Entry(self)
+        self.mobile_entry.pack(pady=5)
+
        
 
         add_btn = ttk.Button(self, text="ثبت نام ", command=self.add_student)
         add_btn.pack(pady=5)
 
-        self.student_list = ttk.Treeview(self, columns=("id", "name", "code"), show="headings")
+        self.student_list = ttk.Treeview(self, columns=("id", "name", "code", "mobile"), show="headings")
         self.student_list.heading("id", text="ID")
         self.student_list.heading("name", text="نام دانش اموز")
         self.student_list.heading("code", text="کدملی")
+        self.student_list.heading("mobile", text="شماره تلفن")
      
         self.student_list.pack(fill="both", expand=True)
 
@@ -32,8 +36,9 @@ class studentView(ttk.Frame):
     def add_student(self):
         name = self.name_entry.get()
         code = self.code_entry.get()
+        monile = self.mobile_entry.get()
         try:
-            self.controller.register_student(name, code)
+            self.controller.register_student(name, code, monile)
            
             self.refresh_student_list()
         except Exception as e:
