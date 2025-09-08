@@ -11,7 +11,8 @@ def create_tables(db):
         CREATE TABLE IF NOT EXISTS students (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT NOT NULL,
-            code TEXT NOT NULL
+            code TEXT NOT NULL,
+            mobile TEXT NOT NULL
             
         )
     """)
