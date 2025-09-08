@@ -4,7 +4,7 @@ class studentController:
     def __init__(self, model):
         self.model = model
 
-    def register_student(self, name, code, mobile):
+    def register_student(self, name, code, mobile, password):
        if not name:
            raise ValueError(ErrorMessages.INVALID_STUDENT_NAME)
        if not name.isalpha():
@@ -23,8 +23,13 @@ class studentController:
             raise ValueError(ErrorMessages.MOBILE_NOT_INTIGER)
        if len(mobile) != 11:
             raise ValueError(ErrorMessages.INVALID_MOBILE)
+       
+       if not password:
+           raise ValueError(ErrorMessages.INVALID_PASSWORD_NAME)
+       if len(password) != 8:
+            raise ValueError(ErrorMessages.INVALID_PASSWORD)
 
-       self.model.add_student(name, code, mobile)
+       self.model.add_student(name, code, mobile, password )
 
     def get_students(self):
         return self.model.get_all_students()

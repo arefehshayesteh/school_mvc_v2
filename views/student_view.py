@@ -8,9 +8,8 @@ class studentView(ttk.Frame):
         self.pack(fill="both", expand=True)
         self.create_widgets()
 
-        ttk.Label(self, text="فرم ثبت‌نام دانش‌آموز", font=("IRANSans", 14, "bold")).pack(pady=10)
-
     def create_widgets(self):
+
         self.name_entry = ttk.Entry(self)
         self.name_entry.pack(pady=5)
 
@@ -19,17 +18,19 @@ class studentView(ttk.Frame):
 
         self.mobile_entry = ttk.Entry(self)
         self.mobile_entry.pack(pady=5)
-
-       
+        
+        self.password_entry = ttk.Entry(self)
+        self.password_entry.pack(pady=5)
 
         add_btn = ttk.Button(self, text="ثبت نام ", command=self.add_student)
         add_btn.pack(pady=5)
 
-        self.student_list = ttk.Treeview(self, columns=("id", "name", "code", "mobile"), show="headings")
+        self.student_list = ttk.Treeview(self, columns=("id", "name", "code", "mobile", "password"), show="headings")
         self.student_list.heading("id", text="ID")
         self.student_list.heading("name", text="نام دانش اموز")
         self.student_list.heading("code", text="کدملی")
         self.student_list.heading("mobile", text="شماره تلفن")
+        self.student_list.heading("password", text="رمز عبور")
      
         self.student_list.pack(fill="both", expand=True)
 
@@ -39,9 +40,9 @@ class studentView(ttk.Frame):
         name = self.name_entry.get()
         code = self.code_entry.get()
         monile = self.mobile_entry.get()
+        password = self.password_entry.get()
         try:
-            self.controller.register_student(name, code, monile)
-           
+            self.controller.register_student(name, code, monile, password)
             self.refresh_student_list()
         except Exception as e:
             Messagebox.show_error(title="خطا", message=str(e))

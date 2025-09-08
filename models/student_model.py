@@ -2,8 +2,8 @@ class StudentModel:
     def __init__(self, db):
         self.db = db
 
-    def add_student(self, name, code, mobile):
-        self.db.execute("INSERT INTO students (name, code, mobile ) VALUES (? , ? , ?)", (name, code, mobile))
+    def add_student(self, name, code, mobile, password):
+        self.db.execute("INSERT INTO students (name, code, mobile, password ) VALUES (? , ? , ? , ?)", (name, code, mobile, password))
 
     def get_all_students(self):
         return self.db.fetchall("SELECT * FROM students")
