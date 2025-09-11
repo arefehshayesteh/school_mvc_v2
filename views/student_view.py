@@ -1,7 +1,7 @@
 import ttkbootstrap as ttk
 from ttkbootstrap.dialogs import Messagebox
 
-class studentView(ttk.Frame):
+class StudentView(ttk.Frame):
     def __init__(self, master, controller):
         super().__init__(master)
         self.controller = controller
