@@ -27,7 +27,7 @@ class StudentView(ttk.Frame):
 
         self.student_list = ttk.Treeview(self, columns=("id", "name", "code", "mobile", "password"), show="headings")
         self.student_list.heading("id", text="ID")
-        self.student_list.heading("name", text="نام دانش اموز")
+        self.student_list.heading("name", text="اسم دانش اموز")
         self.student_list.heading("code", text="کدملی")
         self.student_list.heading("mobile", text="شماره تلفن")
         self.student_list.heading("password", text="رمز عبور")
