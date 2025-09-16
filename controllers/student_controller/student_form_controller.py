@@ -10,7 +10,7 @@ class StudentFormController:
     def save_form(self):
         try:
             data = self.view.get_student_form()
-            self.model.add_student(data["name"], data["national_code"], data["mobile"], data["password"])
+            self.model.add_student(data["name"], data["code"], data["mobile"], data["password"])
             raise ValueError(ErrorMessages.SUCCESSFUL_SUBMIT)
         except Exception as e:
             raise ValueError(ErrorMessages.UNSUCCESSFUL_SUBMIT)
