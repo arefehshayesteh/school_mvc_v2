@@ -2,13 +2,13 @@ from messages.errors import ErrorMessages
 from tkinter import messagebox
 
 class ClassFormController:
-    def __init__(self, model, view):
+    def __init__(self, model , view):
         self.model = model
         self.view = view
-        self.view.save_button.config(command= self.save_form)
+        self.view.save_button.config(command=self.save_form)
 
     def save_form(self):
-        try: 
+        try:
             data = self.view.get_class_form()
             self.model.add_class(data["name"], data["capacity"])
             raise ValueError(ErrorMessages.SUCCESSFUL_SUBMIT)
