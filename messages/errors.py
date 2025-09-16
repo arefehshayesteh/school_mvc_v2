@@ -15,5 +15,7 @@ class ErrorMessages:
     CLASS_NOT_FOUND = "کلاسی با این شناسه یافت نشد."
     STUDENT_NOT_FOUND = "دانش‌آموزی با این شناسه یافت نشد."
     DUPLICATE_ENROLLMENT = "دانش‌آموز قبلاً در این کلاس ثبت‌نام شده است."
+    SUCCESSFUL_SUBMIT = "دانش آموز با موفقیت ثبت شد"
+    UNSUCCESSFUL_SUBMIT = "ثبت نام انجام نشد"
 
     
