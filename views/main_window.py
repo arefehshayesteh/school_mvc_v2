@@ -34,6 +34,9 @@ class MainWindow(ttk.Window):
         ttk.Button(self.navbar, text="ثبت دانش آموز" , command= self.show_student_form).pack(side=RIGHT , padx=1)
         ttk.Button(self.navbar, text=" دانش آموزان" , command= self.show_student_list).pack(side=RIGHT , padx=1)
 
+        ttk.Button(self.navbar, text= "ثبت درس" , command= self.show_student_list).pack(side=RIGHT , padx=1)
+
+
         self.content = ttk.Frame(self)
         self.content.pack(fill=BOTH)
 
