@@ -13,9 +13,12 @@ class ErrorMessages:
     CODE_NOT_INTIGER = "فیلد کدملی را به صورت رقم وارد کنید"
     INVALID_CAPACITY = "ظرفیت کلاس باید عددی مثبت باشد."
     CLASS_NOT_FOUND = "کلاسی با این شناسه یافت نشد."
-    STUDENT_NOT_FOUND = "دانش‌آموزی با این شناسه یافت نشد."
+    STUDENT_NOT_FOUND = "دانش‌آموزی با این کدملی یافت نشد."
     DUPLICATE_ENROLLMENT = "دانش‌آموز قبلاً در این کلاس ثبت‌نام شده است."
     SUCCESSFUL_SUBMIT = "دانش آموز با موفقیت ثبت شد"
     UNSUCCESSFUL_SUBMIT = "ثبت نام انجام نشد"
+    STUDENT_NOT_SELECTED = "دانش‌آموزی انتخاب نشده است."
+    UPDATE_SUBMIT = "ثبت‌نام کلاس‌ها به‌روزرسانی شد."
+
 
     
