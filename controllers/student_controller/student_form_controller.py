@@ -12,7 +12,7 @@ class StudentFormController:
             data = self.view.get_student_form()
             self.model.add_student(data["name"], data["code"], data["mobile"], data["password"])
             raise ValueError(ErrorMessages.SUCCESSFUL_SUBMIT)
-        except Exception as e:
+        except :
             raise ValueError(ErrorMessages.UNSUCCESSFUL_SUBMIT)
 
 

@@ -1,5 +1,4 @@
 from messages.errors import ErrorMessages
-from tkinter import messagebox
 
 class EnrollmentController:
     def __init__(self, student_model, class_model, enrollment_model, view):
@@ -15,11 +14,11 @@ class EnrollmentController:
     def reserch_form(self):
         code = self.view.get_student_code()
         if len(code) != 10:
-            ValueError(ErrorMessages.INVALID_CODE)
-            return
+           raise ValueError(ErrorMessages.INVALID_CODE)
+           
         if not code.isdigit():
-            ValueError(ErrorMessages.CODE_NOT_INTIGER)
-            return
+           raise ValueError(ErrorMessages.CODE_NOT_INTIGER)
+            
 
         student = self.student_model.search_student_by_code(code)
         if student:
@@ -29,12 +28,12 @@ class EnrollmentController:
             enrolled_ids = self.enrollment_model.get_enrolled_class_ids(self.student_id)
             self.view.class_data(classes, enrolled_ids)
         else:
-            ValueError(ErrorMessages.STUDENT_NOT_FOUND)
+           raise ValueError(ErrorMessages.STUDENT_NOT_FOUND)
     
     def enroll_classes(self):
         if not self.student_id:
-            ValueError(ErrorMessages.STUDENT_NOT_SELECTED)
-            return
+           raise ValueError(ErrorMessages.STUDENT_NOT_SELECTED)
+           
         selected = self.view.get_selected_classes()
-        self.enrollment_model.update_student_enrollments(self.student_id, selected)
-        ValueError(ErrorMessages.UPDATE_SUBMIT)
+        self.enrollment_model.update_student_enrollment(self.student_id, selected)
+        raise ValueError(ErrorMessages.UPDATE_SUBMIT)
