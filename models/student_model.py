@@ -12,4 +12,6 @@ class StudentModel:
         self.db.execute("DELETE FROM students WHERE id = ?", (student_id,))
 
     def search_student_by_code(self, code):
-        return self.db.fetchall("SELECT id, name, mobile FROM students WHERE code = ?", (code,))
+        return self.db.fetchone("SELECT id, name, mobile FROM students WHERE code = ?", (code,))
+   
+
