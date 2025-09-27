@@ -41,7 +41,7 @@ class EnrollmentView(ttk.Frame):
         self.class_vars.clear()
         for c_id, title in classes:
             var = ttk.BooleanVar(value=(c_id in enrolled_ids))
-            chk = ttk.CHECKBUTTON(self.class_frame, text= title, variable= var)
+            chk = ttk.Checkbutton(self.class_frame, text= title, variable= var)
             chk.pack(anchor=W)
             self.class_vars.append((c_id, var))
 
