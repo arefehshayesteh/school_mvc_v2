@@ -7,8 +7,10 @@ from controllers.class_controller.class_list_controller import ClassListControll
 
 from views.student_view.student_form_view import StudentFormView
 from views.student_view.student_list_view import StudentListView
+from views.student_view.student_delete_view import StudentDeleteView
 from controllers.student_controller.student_form_controller import StudentFormController
 from controllers.student_controller.student_list_controller import StudentListController
+from controllers.student_controller.student_delete_controller import StudentDeleteContoller
 
 from models.student_model import StudentModel
 from models.class_model import ClassModel
@@ -39,6 +41,7 @@ class MainWindow(ttk.Window):
         ttk.Button(self.navbar, text=" کلاس ها" , command= self.show_class_list).pack(side=RIGHT , padx=1)
 
         ttk.Button(self.navbar, text="ثبت دانش آموز" , command= self.show_student_form).pack(side=RIGHT , padx=1)
+        ttk.Button(self.navbar, text="حذف دانش‌آموز", command=self.show_delete_student).pack(side=RIGHT , padx=1)
         ttk.Button(self.navbar, text=" دانش آموزان" , command= self.show_student_list).pack(side=RIGHT , padx=1)
 
         ttk.Button(self.navbar, text="ثبت کلاس برای دانش‌آموز", command=self.show_enrollment_form).pack(side=RIGHT , padx=1)
@@ -63,6 +66,11 @@ class MainWindow(ttk.Window):
         view = StudentFormView(self.content)
         StudentFormController(self.student_model , view)
 
+    def show_delete_student(self):
+        self._clear_content()
+        view = StudentDeleteView(self.content)
+        StudentDeleteContoller(self.student_model, view)
+      
     def show_student_list(self):
         self._clear_content()
         view = StudentListView(self.content)
