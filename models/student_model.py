@@ -8,8 +8,8 @@ class StudentModel:
     def get_all_students(self):
         return self.db.fetchall("SELECT * FROM students")
 
-    def delete_student(self, student_id):
-        self.db.execute("DELETE FROM students WHERE id = ?", (student_id,))
+    def delete_student_by_code(self, code):
+        self.db.execute("DELETE FROM students WHERE code = ?", (code,))
 
     def search_student_by_code(self, code):
         return self.db.fetchone("SELECT id, name, mobile FROM students WHERE code = ?", (code,))
