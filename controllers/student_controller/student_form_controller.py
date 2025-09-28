@@ -1,5 +1,5 @@
 from messages.errors import ErrorMessages
-from tkinter import messagebox
+from PyQt5.QtWidgets import QMessageBox
 
 class StudentFormController:
     def __init__(self, model , view):
@@ -11,10 +11,17 @@ class StudentFormController:
         try:
             data = self.view.get_student_form()
             self.model.add_student(data["name"], data["code"], data["mobile"], data["password"])
-            raise ValueError(ErrorMessages.SUCCESSFUL_SUBMIT)
-        except :
-            raise ValueError(ErrorMessages.UNSUCCESSFUL_SUBMIT)
-
+            self.show_message(ErrorMessages.SUCCESSFUL_SUBMIT)
+        except Exception as e:
+            self.show_message(ErrorMessages.UNSUCCESSFUL_SUBMIT)
 
     def get_students(self):
         return self.model.get_all_students()
+
+
+    def show_message(self, message):
+        print(message)
+
+
+
+    
